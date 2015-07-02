@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{259EC425-7015-4E4A-BCCE-BDBB6FC4BB27}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>modifiedblitline.net</RootNamespace>
+    <AssemblyName>modifiedblitline.net</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlitlineApi.cs" />
+    <Compile Include="Builders\BuildA.cs" />
+    <Compile Include="Builders\Builder.cs" />
+    <Compile Include="Builders\BuilderBase.cs" />
+    <Compile Include="Extension.cs" />
+    <Compile Include="ExtensionConverter.cs" />
+    <Compile Include="Functions\AnnotateFunction.cs" />
+    <Compile Include="Functions\AppendFunction.cs" />
+    <Compile Include="Functions\AutoEnhanceFunction.cs" />
+    <Compile Include="Functions\AutoGammaFunction.cs" />
+    <Compile Include="Functions\AutoLevelFunction.cs" />
+    <Compile Include="Functions\BackgroundColorFunction.cs" />
+    <Compile Include="Functions\BlitlineFunction.cs" />
+    <Compile Include="Functions\BlurFunction.cs" />
+    <Compile Include="Functions\Builders\AnnotateFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\AppendFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\AutoEnhanceFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\AutoGammaFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\AutoLevelFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\BackgroundColorFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\BlurFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\CompositeFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ContrastFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ContrastStretchChannelFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\CropFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\CropToSquareFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\DeleteProfileFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\DensityFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\DeskewFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\DespeckleFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\EllipseFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\EnhanceFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\EqualizeFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\FunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\GammaChannelFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\GrayColorspaceFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ImaggaSmartCropFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\LineFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\MedianFilterFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ModulateFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\NoOpFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\NormalizeFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\PadResizeToFitFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\PhotographFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\PixelateFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\QuantizeFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\RectangleFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ResampleFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ResizeFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ResizeToFillFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ResizeToFitFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\RotateFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ScaleFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\ScriptFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\SepiaToneFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\SharpenFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\SketchFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\SteganoFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\TrimFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\UnsharpMaskFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\VignetteFunctionBuilder.cs" />
+    <Compile Include="Functions\Builders\WatermarkFunctionBuilder.cs" />
+    <Compile Include="Functions\CaptionFunction.cs" />
+    <Compile Include="Functions\CompositeFunction.cs" />
+    <Compile Include="Functions\ContrastFunction.cs" />
+    <Compile Include="Functions\ContrastStretchChannelFunction.cs" />
+    <Compile Include="Functions\CropFunction.cs" />
+    <Compile Include="Functions\CropToSquareFunction.cs" />
+    <Compile Include="Functions\DeleteProfileFunction.cs" />
+    <Compile Include="Functions\DensityFunction.cs" />
+    <Compile Include="Functions\DeskewFunction.cs" />
+    <Compile Include="Functions\DespeckleFunction.cs" />
+    <Compile Include="Functions\EllipseFunction.cs" />
+    <Compile Include="Functions\EnhanceFunction.cs" />
+    <Compile Include="Functions\EqualizeFunction.cs" />
+    <Compile Include="Functions\GammaChannelFunction.cs" />
+    <Compile Include="Functions\GrayColorspaceFunction.cs" />
+    <Compile Include="Functions\ImaggaSmartCropFunction.cs" />
+    <Compile Include="Functions\LineFunction.cs" />
+    <Compile Include="Functions\MedianFilterFunction.cs" />
+    <Compile Include="Functions\ModulateFunction.cs" />
+    <Compile Include="Functions\NoOpFunction.cs" />
+    <Compile Include="Functions\NormalizeFunction.cs" />
+    <Compile Include="Functions\PadResizeToFitFunction.cs" />
+    <Compile Include="Functions\PhotographFunction.cs" />
+    <Compile Include="Functions\PixelateFunction.cs" />
+    <Compile Include="Functions\QuantizeFunction.cs" />
+    <Compile Include="Functions\RectangleFunction.cs" />
+    <Compile Include="Functions\ResampleFunction.cs" />
+    <Compile Include="Functions\ResizeFunction.cs" />
+    <Compile Include="Functions\ResizeToFillFunction.cs" />
+    <Compile Include="Functions\ResizeToFitFunction.cs" />
+    <Compile Include="Functions\RotateFunction.cs" />
+    <Compile Include="Functions\ScaleFunction.cs" />
+    <Compile Include="Functions\ScriptFunction.cs" />
+    <Compile Include="Functions\SepiaToneFunction.cs" />
+    <Compile Include="Functions\SharpenFunction.cs" />
+    <Compile Include="Functions\SketchFunction.cs" />
+    <Compile Include="Functions\SteganoFunction.cs" />
+    <Compile Include="Functions\TrimFunction.cs" />
+    <Compile Include="Functions\UnsharpMaskFunction.cs" />
+    <Compile Include="Functions\VignetteFunction.cs" />
+    <Compile Include="Functions\WatermarkFunction.cs" />
+    <Compile Include="IBlitlineApi.cs" />
+    <Compile Include="ParamOptions\CompositeOps.cs" />
+    <Compile Include="ParamOptions\Gravity.cs" />
+    <Compile Include="ParamOptions\InterlaceType.cs" />
+    <Compile Include="ParamOptions\LineCap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\AzureDestination.cs" />
+    <Compile Include="Request\BlitlineRequest.cs" />
+    <Compile Include="Request\BlitlineRequestExtensions.cs" />
+    <Compile Include="Request\Builders\AzureDestinationBuilder.cs" />
+    <Compile Include="Request\Builders\FtpDestinationBuilder.cs" />
+    <Compile Include="Request\Builders\RequestBuilder.cs" />
+    <Compile Include="Request\Builders\S3DestinationBuilder.cs" />
+    <Compile Include="Request\Builders\SaveBuilder.cs" />
+    <Compile Include="Request\FtpDestination.cs" />
+    <Compile Include="Request\Function.cs" />
+    <Compile Include="Request\Hash.cs" />
+    <Compile Include="Request\MultiPageSourceType.cs" />
+    <Compile Include="Request\S3Destination.cs" />
+    <Compile Include="Request\Save.cs" />
+    <Compile Include="Response\BlitlineBatchResponse.cs" />
+    <Compile Include="Response\BlitlineResponse.cs" />
+    <Compile Include="Response\Image.cs" />
+    <Compile Include="Response\Results.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SpecialFilters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
